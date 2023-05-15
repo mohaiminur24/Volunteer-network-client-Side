@@ -4,10 +4,18 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const navmenu = <>
-      <li><NavLink className={({isActive})=>isActive && "text-yellow-500 font-bold"}>Home</NavLink></li>
-      <li><NavLink>Donation</NavLink></li>
-      <li><NavLink>Events</NavLink></li>
-      <li><NavLink>Blog</NavLink></li>
+      <li>
+        <NavLink to="/" className={({isActive})=>isActive && "text-yellow-500 font-bold"}>Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/event/addevent" className={({isActive})=>isActive && "text-yellow-500 font-bold"}>Donation</NavLink>
+      </li>
+      <li>
+        <NavLink to="/event" className={({isActive})=>isActive && "text-yellow-500 font-bold"}>Events</NavLink>
+      </li>
+      <li>
+        <NavLink to="/blog" className={({isActive})=>isActive && "text-yellow-500 font-bold"}>Blog</NavLink>
+      </li>
       <li><button className="bg-blue-500 hover:bg-primary-focus py-3 my-2 md:my-0 uppercase text-white rounded-md px-10">Register</button></li>
       <li><button className="bg-accent hover:bg-accent-focus py-3 uppercase text-white rounded-md px-10">Admin</button></li>
   </>;
