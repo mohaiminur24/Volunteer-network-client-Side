@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "daisyui": "^2.51.6",
+    "firebase": "^9.22.0",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
-    "react-router-dom": "^6.11.1"
+    "react-router-dom": "^6.11.1",
+    "sweetalert2": "^11.7.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

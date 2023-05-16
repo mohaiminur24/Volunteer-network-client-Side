@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../assets/logos/logo.png";
 import { NavLink } from "react-router-dom";
+import { Authcontext } from "../AuthContextLayout/AuthcationContext";
+import Swal from "sweetalert2";
 
 const Header = () => {
+  const {user,loggedout} = useContext(Authcontext);
+
+  const loginout =()=>{
+      loggedout().then(res=>{
+        console.log(res);
+        Swal.fire({
+          icon: 'success',
+          title: 'User Logout successfully!',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }).catch(error=>{
+        Swal.fire({
+          icon: 'error',
+          title: 'Something wrong!',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      })
+  }
+
+
   const navmenu = <>
       <li>
         <NavLink to="/" className={({isActive})=>isActive && "text-yellow-500 font-bold"}>Home</NavLink>
@@ -16,9 +40,15 @@ const Header = () => {
       <li>
         <NavLink to="/blog" className={({isActive})=>isActive && "text-yellow-500 font-bold"}>Blog</NavLink>
       </li>
-      <li><button className="bg-blue-500 hover:bg-primary-focus py-3 my-2 md:my-0 uppercase text-white rounded-md px-10">Register</button></li>
-      <li><button className="bg-accent hover:bg-accent-focus py-3 uppercase text-white rounded-md px-10">Admin</button></li>
+      {
+        !user ? <li><NavLink to="/registration"><button className="bg-blue-500 hover:bg-primary-focus py-3 my-1 md:my-0 uppercase text-white rounded-md px-5">Register</button></NavLink></li>:<button onClick={loginout} className="bg-red-500 hover:bg-red-600 py-3 uppercase text-white rounded-md px-5">LogOut</button>
+      }
+      <li><button className="bg-accent hover:bg-accent-focus py-3 uppercase text-white rounded-md px-5">Admin Request</button></li>
   </>;
+
+
+
+
 
   return (
     <div className="navbar bg-base-100 bg-transparent h-32">
@@ -50,7 +80,7 @@ const Header = () => {
         <img className="w-52 ml-10" src={logo} alt="" />
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu-horizontal px-1 flex items-center font-semibold gap-10">
+        <ul className="menu-horizontal px-1 flex items-center font-semibold gap-5">
           {navmenu}
         </ul>
       </div>
