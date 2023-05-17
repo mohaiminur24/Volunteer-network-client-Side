@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import EventHeader from '../ShareableComponent/EventHeader';
 import { BsFillTrash3Fill,BsCreditCard2FrontFill } from "react-icons/bs";
 
 const RegisterPage = () => {
+    const [volunteerlist , setVolunteerlist] = useState([]);
+    useEffect(()=>{
+        fetch("http://localhost:5000/volunteerlist").then(res=>res.json())
+        .then(data=>{
+            setVolunteerlist(data);
+        });
+    },[])
+
     return (
         <>
         <EventHeader>Volunteer register list</EventHeader>
@@ -23,47 +31,25 @@ const RegisterPage = () => {
                     </tr>
                     </thead>
                     <tbody>
+                        {
+                            volunteerlist && volunteerlist.map(volunteer =>{
+                            return <>
+                                <tr>
+                                <td>{volunteer.name}</td>
+                                <td>{volunteer.email}</td>
+                                <td>{volunteer.RegistrationDate}</td>
+                                <td>{volunteer.description}</td>
+                                <td className='flex gap-5'>
+                                    <button className='px-5 py-2 bg-green-500 font-bold text-white rounded-md'><BsCreditCard2FrontFill/></button>
+                                    <button className='px-5 py-2 bg-red-500 font-bold text-white rounded-md'><BsFillTrash3Fill/></button>
+                                </td>
+                            </tr>
+                            </>
+                            })
+                        }
                     
-                    <tr>
-                        <td>Cy Ganderton</td>
-                        <td>Quality Control Specialist</td>
-                        <td>Blue</td>
-                        <td>Blue</td>
-                        <td className='flex gap-5'>
-                            <button className='px-5 py-2 bg-green-500 font-bold text-white rounded-md'><BsCreditCard2FrontFill/></button>
-                            <button className='px-5 py-2 bg-red-500 font-bold text-white rounded-md'><BsFillTrash3Fill/></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cy Ganderton</td>
-                        <td>Quality Control Specialist</td>
-                        <td>Blue</td>
-                        <td>Blue</td>
-                        <td className='flex gap-5'>
-                            <button className='px-5 py-2 bg-green-500 font-bold text-white rounded-md'><BsCreditCard2FrontFill/></button>
-                            <button className='px-5 py-2 bg-red-500 font-bold text-white rounded-md'><BsFillTrash3Fill/></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cy Ganderton</td>
-                        <td>Quality Control Specialist</td>
-                        <td>Blue</td>
-                        <td>Blue</td>
-                        <td className='flex gap-5'>
-                            <button className='px-5 py-2 bg-green-500 font-bold text-white rounded-md'><BsCreditCard2FrontFill/></button>
-                            <button className='px-5 py-2 bg-red-500 font-bold text-white rounded-md'><BsFillTrash3Fill/></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cy Ganderton</td>
-                        <td>Quality Control Specialist</td>
-                        <td>Blue</td>
-                        <td>Blue</td>
-                        <td className='flex gap-5'>
-                            <button className='px-5 py-2 bg-green-500 font-bold text-white rounded-md'><BsCreditCard2FrontFill/></button>
-                            <button className='px-5 py-2 bg-red-500 font-bold text-white rounded-md'><BsFillTrash3Fill/></button>
-                        </td>
-                    </tr>
+                    
+                    
 
                     </tbody>
                 </table>

@@ -43,7 +43,7 @@ const Header = () => {
       {
         !user ? <li><NavLink to="/registration"><button className="bg-blue-500 hover:bg-primary-focus py-3 my-1 md:my-0 uppercase text-white rounded-md px-5">Register</button></NavLink></li>:<button onClick={loginout} className="bg-red-500 hover:bg-red-600 py-3 uppercase text-white rounded-md px-5">LogOut</button>
       }
-      <li><button className="bg-accent hover:bg-accent-focus py-3 uppercase text-white rounded-md px-5">Admin Request</button></li>
+      <li><button className="bg-accent hover:bg-accent-focus py-3 uppercase text-white rounded-md px-5">Admin</button></li>
   </>;
 
 

@@ -10,18 +10,22 @@ const auth = getAuth(app);
 
 const AuthcationContext = ({children}) => {
     const [user, setuser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
 
     // Firebase all function start from here
     const handleCreteUser = (email,pass)=>{
+        setLoading(true);
         return createUserWithEmailAndPassword(auth,email,pass);
     };
 
     const loggedout = ()=>{
+        setLoading(true);
         return signOut(auth);
     };
 
     const handleLoginUser = (email,pass)=>{
+        setLoading(true);
         return signInWithEmailAndPassword(auth,email,pass);
     };
 
@@ -32,6 +36,7 @@ const AuthcationContext = ({children}) => {
     useEffect(()=>{
         const unsuscribe = onAuthStateChanged(auth, loggeduser=>{
             setuser(loggeduser);
+            setLoading(false);
         })
         return ()=>{
             return unsuscribe;
@@ -44,7 +49,8 @@ const AuthcationContext = ({children}) => {
         user,
         handleCreteUser,
         loggedout,
-        handleLoginUser
+        handleLoginUser,
+        loading
     }
 
 

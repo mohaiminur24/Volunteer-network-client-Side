@@ -14,6 +14,7 @@ const LoginPage = () => {
 
 
     const loginuser =(event)=>{
+        setErrorMessage(null);
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;

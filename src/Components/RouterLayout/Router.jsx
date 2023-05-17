@@ -6,8 +6,13 @@ import EventPage from "../PageLayout/EventPage";
 import Dashboard from "../PageLayout/Dashboard";
 import RegisterPage from "../PageLayout/RegisterPage";
 import Addeventpage from "../PageLayout/Addeventpage";
+import PrivateRoute from "../AuthContextLayout/PrivateRoute";
+import ErrorLayout from "../ShareableComponent/ErrorLayout";
 
 const router = createBrowserRouter([
+    {
+        errorElement: <ErrorLayout/>
+    },
     {
         path:"/",
         element:<HomePage/>,
@@ -22,7 +27,7 @@ const router = createBrowserRouter([
     },
     {
         path:"/event",
-        element: <EventPage/>,
+        element: <PrivateRoute><EventPage/></PrivateRoute>,
         children:([
             {
                 path:"/event",
