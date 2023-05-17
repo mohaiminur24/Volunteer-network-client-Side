@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../ShareableComponent/Header';
 import SearchSection from '../ShareableComponent/SearchSection';
-import { Outlet } from 'react-router-dom';
 import SingleEventsection from '../ShareableComponent/SingleEventsection';
 
 const HomePage = () => {
@@ -16,7 +15,7 @@ const HomePage = () => {
             <Header/>
             <SearchSection/>
 
-            <div className='grid grid-cols-4 gap-5'>
+            <div className='grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-cols-1 sm:grid-cols-2 gap-5'>
                 {
                    event && event.map(et => <SingleEventsection key={et._id} data={et}/>) 
                 }

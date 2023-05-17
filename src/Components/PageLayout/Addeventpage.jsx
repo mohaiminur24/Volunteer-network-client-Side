@@ -47,7 +47,7 @@ const Addeventpage = () => {
         <div className="w-full bg-white p-10 rounded-md border-[20px] min-h-[calc(100vh-100px)] border-gray-100">
             
             <form onSubmit={handleaddevent}>
-                <div className='font-inter grid grid-cols-2 gap-5'>
+                <div className='font-inter grid lg:grid-cols-2 grid-cols-1 gap-5'>
                     <div>
                         <label className='font-semibold' htmlFor="title">Event Title</label>
                         <input className='border block my-1 px-3 py-2 text-sm outline-none text-gray-500 rounded-md w-full' type="text" name="title" id="title" placeholder='Enter title' />
