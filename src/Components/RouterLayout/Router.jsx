@@ -8,6 +8,7 @@ import RegisterPage from "../PageLayout/RegisterPage";
 import Addeventpage from "../PageLayout/Addeventpage";
 import PrivateRoute from "../AuthContextLayout/PrivateRoute";
 import ErrorLayout from "../ShareableComponent/ErrorLayout";
+import UserProfile from "../PageLayout/UserProfile";
 
 const router = createBrowserRouter([
     {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
                 element: <Addeventpage/>
             }
         ])
+    },
+    {
+        path:"/userprofile",
+        element: <UserProfile/>
     }
 ]);
 

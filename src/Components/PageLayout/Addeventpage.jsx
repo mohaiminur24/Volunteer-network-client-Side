@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import EventHeader from '../ShareableComponent/EventHeader';
 import Swal from 'sweetalert2';
+import { Authcontext } from '../AuthContextLayout/AuthcationContext';
 
 
 const Addeventpage = () => {
+    const {user} = useContext(Authcontext);
 
     const handleaddevent = (event) =>{
         event.preventDefault();
@@ -12,7 +14,8 @@ const Addeventpage = () => {
         const date = form.date.value;
         const description = form.description.value;
         const photourl = form.photourl.value;
-        const object = {title,date,description,photourl};
+        const userEmail = user.email;
+        const object = {title,date,description,photourl,userEmail};
         
 
         fetch("http://localhost:5000/addevent",{

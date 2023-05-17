@@ -11,8 +11,6 @@ const HomePage = () => {
         .then(data=> setEvent(data));
     },[]);
 
-    console.log(event);
-
     return (
         <div className='w-11/12 mx-auto font-inter relative'>
             <Header/>
