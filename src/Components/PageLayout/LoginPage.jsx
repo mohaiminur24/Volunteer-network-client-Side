@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import logo from "../../assets/logos/logo.png"
 import GoogleLogin from '../ShareableComponent/GoogleLogin';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../AuthContextLayout/AuthcationContext';
 import Swal from 'sweetalert2';
 import { BiError } from 'react-icons/bi';
@@ -10,6 +10,8 @@ const LoginPage = () => {
     const {handleLoginUser} = useContext(Authcontext);
     const nevigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState(null);
+    const loacation = useLocation();
+    const from = loacation?.state?.from?.pathname || "/";
 
 
 
@@ -28,7 +30,7 @@ const LoginPage = () => {
                 timer: 1500
               })
               form.reset();
-              nevigate("/");
+              nevigate(from);
         }).catch(error=>{
             setErrorMessage(error.message);
         })
