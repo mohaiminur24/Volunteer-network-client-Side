@@ -14,7 +14,7 @@ const UserEvent = ({data}) => {
           }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/delevent?id=${_id}`,{
+                fetch(`https://volunteer-server-side.vercel.app/delevent?id=${_id}`,{
                     method:"DELETE",
                 }).then(res=>res.json).then(data=>{
                     setCancel(true);

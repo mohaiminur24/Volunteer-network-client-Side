@@ -18,7 +18,7 @@ const Addeventpage = () => {
         const object = {title,date,description,photourl,userEmail};
         
 
-        fetch("http://localhost:5000/addevent",{
+        fetch("https://volunteer-server-side.vercel.app/addevent",{
                 method:"POST",
                 headers:{
                     "content-type": "application/json"

@@ -9,7 +9,7 @@ const UserProfile = () => {
 
     useEffect(()=>{
         if(user?.email){
-            fetch(`http://localhost:5000/userevent?email=${user.email}`).then(res=> res.json())
+            fetch(`https://volunteer-server-side.vercel.app/userevent?email=${user.email}`).then(res=> res.json())
         .then(data => {
             setUserEvent(data);
         });

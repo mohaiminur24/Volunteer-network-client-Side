@@ -43,7 +43,7 @@ const Registration = () => {
             
             // new volunteer function is here
             try {
-                fetch("http://localhost:5000/newvolunteer",{
+                fetch("https://volunteer-server-side.vercel.app/newvolunteer",{
                 method: "POST",
                 headers:{
                     'content-type':'application/json'

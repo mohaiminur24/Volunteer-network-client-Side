@@ -1,10 +1,14 @@
 import React from 'react';
 
-const SearchSection = ({search}) => {
+const SearchSection = ({setEvent}) => {
+
     const setsearchtext =(event)=>{
         event.preventDefault();
         const text = event.target.search.value;
-        search(text);
+            fetch(`https://volunteer-server-side.vercel.app/searchevent?search=${text}`).then(res=>res.json())
+            .then(data=>{
+                setEvent(data);
+            });
     };
 
     return (
