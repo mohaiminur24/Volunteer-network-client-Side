@@ -37,7 +37,7 @@ const LoginPage = () => {
     return (
         <div className='w-11/12 mx-auto'>
             <div className='w-full'><img className='w-52 mx-auto my-5' src={logo} alt="" /></div>
-            <div className='w-3/5 mx-auto border rounded-md p-20 my-10'>
+            <div className='md:w-3/5 w-full mx-auto border rounded-md md:p-20 p-10 my-10'>
                 <form onSubmit={loginuser}>
                     <h1 className='text-3xl font-bold mb-5'>Login Account</h1>
                     <div>

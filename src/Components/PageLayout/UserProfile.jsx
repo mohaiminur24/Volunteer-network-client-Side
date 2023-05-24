@@ -23,7 +23,7 @@ const UserProfile = () => {
                 <h1 className='font-inter font-bold text-accent border-b pb-2'>Email Address: <span className='text-sm font-normal ml-2 text-black'>{user?.email}</span></h1>
 
                 
-                <div className='grid grid-cols-3 gap-5'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
                    userevent && userevent.map(et=><UserEvent key={et._id} data={et}/>) 
                 }

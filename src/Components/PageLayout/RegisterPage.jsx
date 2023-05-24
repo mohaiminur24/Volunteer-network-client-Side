@@ -44,7 +44,7 @@ const RegisterPage = () => {
     return (
         <>
         <EventHeader>Volunteer register list</EventHeader>
-        <div className="w-full bg-white p-10 rounded-md flex justify-center border-[20px] min-h-[calc(100vh-100px)] border-gray-100">
+        <div className="w-full bg-white p-10 rounded-md flex justify-center border-[20px] min-h-[calc(100vh-100px)] border-gray-100 overflow-x-auto">
             
             {/* table start here */}
             
@@ -77,7 +77,7 @@ const RegisterPage = () => {
                             </tr>
                             </>
                             })
-                        };
+                        }
                     </tbody>
                 </table>
                 </div>

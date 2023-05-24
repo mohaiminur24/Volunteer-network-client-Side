@@ -72,9 +72,9 @@ const Registration = () => {
     return (
         <div className='w-11/12 mx-auto'>
             <div className='w-full'><img className='w-52 mx-auto my-5' src={logo} alt="" /></div>
-            <div className='w-3/5 mx-auto border rounded-md p-20 my-10'>
+            <div className='md:w-3/5 mx-auto border rounded-md md:p-20 p-5 my-10'>
                 <form onSubmit={createUser}>
-                    <h1 className='text-3xl font-bold mb-5'>Registration Account</h1>
+                    <h1 className='md:text-3xl text-lg font-bold mb-5'>Registration Account</h1>
                     <div>
                         <label className='font-semibold text-gray-500' htmlFor="email">Name</label>
                         <input className='w-full text-gray-500 border px-3 py-2 rounded-sm outline-none my-1' type="name" name="name" id="name" />

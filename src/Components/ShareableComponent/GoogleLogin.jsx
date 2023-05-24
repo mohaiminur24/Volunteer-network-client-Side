@@ -36,10 +36,10 @@ const GoogleLogin = () => {
                 <span>OR</span>
             </div>
 
-            <div className='flex justify-center'>
-                <button onClick={LoginByGoogle} className='w-2/5 px-5 py-3 rounded-full border flex justify-center items-center gap-5 focus:bg-gray-50'>
-                    <FcGoogle className='text-3xl'/>
-                    <span className='font-semibold'>Continue With Google</span>
+            <div className='flex items-center justify-center'>
+                <button onClick={LoginByGoogle} className='md:w-2/5 px-5 py-3 rounded-full border flex justify-center items-center gap-5 focus:bg-gray-50'>
+                    <FcGoogle className='md:text-3xl text-5xl'/>
+                    <span className='md:text-sm text-xs'>Continue With Google</span>
                 </button>
             </div>
             
