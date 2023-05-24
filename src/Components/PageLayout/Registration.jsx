@@ -101,7 +101,7 @@ const Registration = () => {
                         <span>{errorMessage}</span>
                         </span>
                     }
-                    <input className='w-full py-2 bg-accent mt-5 rounded-sm font-bold text-white hover:bg-accent-focus' type="submit" value="Login" />
+                    <input className='w-full py-2 bg-accent mt-5 rounded-sm font-bold text-white hover:bg-accent-focus' type="submit" value="Registration" />
                 </form>
                 <GoogleLogin/>
                 <div className='w-full text-center my-5'>
